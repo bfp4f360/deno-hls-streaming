@@ -1,0 +1,10 @@
+import { serveDir } from "https://deno.land/std@0.211.0/http/file_server.ts";
+
+Deno.serve((req) => {
+  // Serves files from the "./video" directory
+  return serveDir(req, {
+    fsRoot: "video",
+    urlRoot: "",
+    showDirListing: true,
+  });
+});
